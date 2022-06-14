@@ -34,7 +34,6 @@ def values(cisla):
     y_axe = []
 
     for x, y in cisla.items():
-        print(x, y)
         x_axe.append(y[0])
         y_axe.append(y[1])
     return x_axe, y_axe
@@ -65,7 +64,7 @@ def prepare(f):
 
     for x,y in d.items():
         if y >= 1000:
-            data[x] = y
+            data[x] = y / 1000
 
     return data
 
@@ -100,7 +99,7 @@ mymodel = list(map(line, x_axe))
 plt.scatter(x_axe, y_axe)
 plt.plot(x_axe, mymodel)
 plt.xlabel('vzdálenost od středu Prahy v mílích')
-plt.ylabel('počet nehod')
+plt.ylabel('počet nehod v tisících')
 
 
 plt.savefig('linear.png')
