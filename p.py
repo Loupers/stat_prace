@@ -3,10 +3,14 @@
 import csv
 import matplotlib.pyplot as plt
 from scipy import stats
+import random
 
-data_set = ["data-2018.csv", "data-2019.csv" ,"data-2020.csv", "data-2021.csv"]
+data_set = [18, 19, 20, 21]
 
-def match_distance():
+def plus_minus(year):
+    return 1 if year%2 == 0 else -1
+
+def match_distance(year):
     with open('vzdalenosti.csv') as csv_file:
         data = {}
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -15,7 +19,7 @@ def match_distance():
             x = row[0].upper() 
             y = row[1]
             if len(x) > 0 and len(y) > 0: 
-                data[x] = float(y)
+                data[x] = float(y) + year * plus_minus(year)/100
         return data
 
 def join(cisla, vzdalenosti):
@@ -65,9 +69,9 @@ def prepare(f):
 
     return data
 
-def process(f):
-    cisla = prepare(f)
-    vzdalenosti = match_distance()
+def process(year):
+    cisla = prepare("data-20{0}.csv".format(year))
+    vzdalenosti = match_distance(year)
 
     cisla = join(cisla, vzdalenosti)
     return cisla

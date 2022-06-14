@@ -28,6 +28,10 @@ Zvolené body a přímky, podle kterých jsem počítal vzdálenost,
 jsou v souboru [casti.json](./casti.json). Vzdálenost jsem počítal
 s pomocí aplikace [http://geojson.io/](http://geojson.io/), kde 
 se mi nepodařilo najít konverzi na km, tak jsou vzdálenosti v mílích.
+Jelikož vzdálenost je jako taková hodně nepřesán, tak jsem se rozhodl
+ji pro každý rok lehce posunout v rámci městské části. Konkrétně o
+`(rok - 2000)/100`, dále nebo blíže ke středu podle toho, zda byl lichý
+nebo sudý rok, ať lehce eliminuji můj nepřesný výběr vzdálenosti.
 
 ## Lineární regrese
 
@@ -35,7 +39,7 @@ Jako alfa-hodnotu si zvolím klasicky `0.05` a provedu lineární regresi.
 
 ![Lineární regrese](./linear.png)
 
-Z lineární regrese dostanu p-hodnotu přibližně `0.72`, 
+Z lineární regrese dostanu p-hodnotu přibližně `0.75`, 
 což je velmi vysoko nad hranicí `0.05`. Tedy nulovou hypotézu
-určitě neumím potvrdit.
+určitě nemůžu zamítnout podle zpracovaných dat.
  
