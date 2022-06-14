@@ -9,6 +9,8 @@ na vzdálenosti
 
 ## Data
 
+Data byla zabalena do zipu, abych nemusel používat git pro velké soubory
+
 ### Přestupky
 
 Přestupky byly sebrány z [otevřených dat Prahy](https://opendata.praha.eu/dataset/dopravni-prestupky-mhmp-2020/resource/83bb001b-8074-4ae9-8b6f-961aa7e6a92f), přes roky 2018-2021,
