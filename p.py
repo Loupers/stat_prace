@@ -99,7 +99,7 @@ mymodel = list(map(line, x_axe))
 plt.scatter(x_axe, y_axe)
 plt.plot(x_axe, mymodel)
 plt.xlabel('vzdálenost od středu Prahy v mílích')
-plt.ylabel('počet nehod v tisících')
+plt.ylabel('počet přestupků v tisících')
 
 
 plt.savefig('linear.png')
